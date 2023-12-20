@@ -13,14 +13,6 @@ import { Label } from "../@/components/ui/label";
 import { tasksWithOutId } from '../types'
 import axios from 'axios';
 const AddTask = () => {
-
-    const [tasks, setTasks] = useState<tasksWithOutId>(
-        {
-            name: '',
-            description: ''
-        }
-    );
-
     const [taskname, setTaskName] = useState<string>("");
     const [taskdescription, setTaskDescription] = useState<string>("");
     const id = localStorage.getItem('userId');
@@ -30,10 +22,7 @@ const AddTask = () => {
             return;
         }
 
-        const newTask: tasksWithOutId = {
-            name: taskname,
-            description: taskdescription,
-        };
+ 
 
         axios
             .post<tasksWithOutId>(`http://localhost:3000/api/v1/tasks`, 

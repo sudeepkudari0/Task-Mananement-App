@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import AddTask from './AddTask'
 import { tasksWithId } from '../types'
 import { useState } from 'react'
