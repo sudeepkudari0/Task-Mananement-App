@@ -10,9 +10,10 @@ app.use(cookieParser());
 const cors = require('cors');
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://192.168.0.110:5173', 'http://127.0.0.1:5173'],
+    origin: ['http://localhost:5173', 'https://task-mananement-app.vercel.app/login', 'https://task-mananement-app.vercel.app/signup', 'https://task-mananement-app.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true,
+    optionsSuccessStatus: 200,
   }));
 client.connect().then(() => {
     console.log('Database connected');

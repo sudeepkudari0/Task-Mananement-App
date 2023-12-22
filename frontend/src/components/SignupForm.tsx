@@ -6,13 +6,14 @@ const SignupForm = () => {
     const [password, setPassword] = useState('')
     const [ fname, setFname] = useState('')
     const [ lname, setLname] = useState('')
+    const API = import.meta.env.VITE_API;
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         console.log(email, password, fname, lname);
         
         try {
-            const response = await axios.post('http://localhost:3000/api/v1/auth/signup', {
+            const response = await axios.post(`${API}/api/v1/auth/signup`, {
                 first_name: fname, last_name: lname, email, password
             })
             console.log(response.data);

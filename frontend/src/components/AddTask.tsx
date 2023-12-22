@@ -16,6 +16,7 @@ const AddTask = () => {
     const [taskname, setTaskName] = useState<string>("");
     const [taskdescription, setTaskDescription] = useState<string>("");
     const id = localStorage.getItem('userId');
+    const API = import.meta.env.VITE_API;
     const addtask = () => {
         if (!taskname || !taskdescription) {
             alert("Please fill out both name and description.");
@@ -25,7 +26,7 @@ const AddTask = () => {
  
 
         axios
-            .post<tasksWithOutId>(`http://localhost:3000/api/v1/tasks`, 
+            .post<tasksWithOutId>(`${API}/api/v1/tasks`, 
             {task_name : taskname, task_description : taskdescription, id : id},
                 {
                     withCredentials: true,

@@ -3,7 +3,7 @@ import SideBar from './SideBar'
 
 const DashBoard = () => {
   return (
-    <div className='flex bg-black'>
+    <div className='sm:flex bg-black w-full h-full'>
         <SideBar />
         <AllTasks />
         
