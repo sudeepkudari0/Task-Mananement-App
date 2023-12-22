@@ -9,12 +9,7 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 const cors = require('cors');
 app.use(express.json());
-app.use(cors({
-    origin: ['http://localhost:5173', 'https://task-mananement-app.vercel.app/login', 'https://task-mananement-app.vercel.app/signup', 'https://task-mananement-app.vercel.app'],
-    methods: ['GET', 'POST'],
-    credentials: true,
-    optionsSuccessStatus: 200,
-  }));
+app.use(cors());
 client.connect().then(() => {
     console.log('Database connected');
 }).catch((err) => {
